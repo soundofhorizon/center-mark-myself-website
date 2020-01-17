@@ -128,6 +128,6 @@ if(isset($_POST["OKorNO"])){
 }
 ?>
 </form>
-<footer>Copyright &copy; 2020, Masaki Oshiba, All right reserved.</footer>
+<footer>Copyright &copy; 2020, soundofhorizon, All right reserved.</footer>
 </body>
 </html>
