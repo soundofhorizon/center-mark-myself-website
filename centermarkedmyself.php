@@ -15,13 +15,14 @@
   <p>以下の順番で選択してください</p>
 　<p>① : 科目を選択した後、表示される表に、各設問ごと自分が回答した番号を選択して下さい(初期は「未選択」にチェックが入っています)</p>
   <p>② : 全てチェックしたのを確認した上で、採点ボタンを押すと採点されます。</p>
-  <p>解答吸出し完了しました。(2020/01/18 JST 22:25:20)</p>
+  <p>解答吸出し完了しました。(2020/01/18 JST 22:49:20)</p>	
   <h4>※最初から[解答をすべて入力してください]と出ているのは仕様です</h4>
 <hr>
 <form method="post" action="centermarkedmyself.php">
 	①：　<select name="subjects" required>
   		<option value="">科目を選択してください</option>
   		<option value="日本史B">日本史B</option>
+		<option value="地理B">地理B</option>
 　		<option value="政治・経済">政治・経済</option>
 　		<option value="国語">国語</option>
   		<option value="英語">英語</option>
@@ -59,6 +60,13 @@ if(isset($_POST["a"])){
 		$_SESSION['bigQuestion'] = 6;
 		$_SESSION['answer'] = array(4,4,3,3,4,3,2,4,4,1,4,2,3,1,1,2,2,3,1,2,4,4,2,4,3,3,1,3,1,6,2,3,2,4,1,4,3);
 		$_SESSION['points'] = array(3,3,3,2,3,2,3,3,2,2,3,3,2,3,3,3,2,2,3,2,2,3,3,3,3,3,3,2,3,3,3,3,3,3,3,3,2);
+	}else if($_POST["subjects"]=='地理B'){
+		$_SESSION['subject'] = $_POST["subjects"];
+		$_SESSION['questionNum'] = array(6,6,6,6,5,6);
+		$_SESSION['allQuestion'] = 35;
+		$_SESSION['bigQuestion'] = 6;
+		$_SESSION['answer'] = array(1,3,2,4,2,6,2,4,4,6,4,3,2,2,3,1,4,1,3,4,1,3,1,1,2,3,3,2,2,5,2,2,1,3,1);
+		$_SESSION['points'] = array(2,3,3,3,3,3,3,2,3,3,3,3,3,2,3,3,3,3,2,3,3,3,3,3,2,3,3,3,3,3,3,3,3,3,3);
 	}else if($_POST["subjects"]=='国語'){
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(11,9,8,7);
