@@ -115,7 +115,7 @@ if(isset($_POST["OKorNO"])){
 	$myPoint = 0;
 	if($_POST["OKorNO"]=='OK'){
 		for($l = 1; $l <= $_SESSION['allQuestion']; $l++){
-			if($subjects = "英語"){
+			if($subjects == "英語"){
 				if($l<=17){
 					if($_POST[$l]==$answer[$l-1]){
 						$myPoint += $points[$l-1];
