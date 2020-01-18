@@ -7,37 +7,45 @@
 </head>
 <body>
   <div class="SetBackground">
-	<center><h1>センター自己採点1日目</h1></center>
+	<center><h1>センター自己採点</h1></center>
   </div>
   <br>
-  <p>センター試験1日目、お疲れ様です。自己採点するサイトを作ったので利用してください。</p>
+  <p>センター試験、お疲れ様です。自己採点するサイトを作ったので利用してください。</p>
 　<p>今回、解答は<a hlef="https://www.toshin.com/center/index.html">こちら</a>のサイトを参考にしています。この場を借りてお礼申し上げます。</p>
   <p>以下の順番で選択してください</p>
 　<p>① : 科目を選択した後、表示される表に、各設問ごと自分が回答した番号を選択して下さい(初期は「未選択」にチェックが入っています)</p>
   <p>② : 全てチェックしたのを確認した上で、採点ボタンを押すと採点されます。</p>
-  <p>解答吸出し完了しました。(2020/01/18 JST 22:49:20)</p>	
+  <!-- <h4>解答作成完了しました。(2020/01/19 JST 20:30:00)</h4> -->
+  <p>解答データ未登録です (2020/01/18 JST 23:50:08)</p>
   <h4>※最初から[解答をすべて入力してください]と出ているのは仕様です</h4>
 <hr>
-<form method="post" action="index.php">
+<form method="post" action="centermarkedmyself.php">
 	①：　<select name="subjects" required>
   		<option value="">科目を選択してください</option>
   		<option value="日本史B">日本史B</option>
 		<option value="地理B">地理B</option>
-　		<option value="政治・経済">政治・経済</option>
+　		<option value="政治・経済・倫理">政治・経済・倫理</option>
 　		<option value="国語">国語</option>
   		<option value="英語">英語</option>
   		<option value="リスニング">リスニング</option>
+  		<option value="化学基礎">化学基礎</option>
+  		<option value="生物基礎">生物基礎</option>
+  		<option value="物理">物理</option>
+  		<option value="化学">化学</option>
+  		<option value="数学1・数学A">数学1・数学A</option>
+  		<option value="数学2・数学B">数学2・数学B</option>
 	</select>
 	<input type="submit" name = "a" value="科目選択">
 </form>
 <hr>
 <p>本当にすべて解答を入力しましたか？大丈夫でしたらOKをクリックして採点ボタンを押してください。下に採点結果が表示されます。(入力情報はセキュリティ上破棄されます。)</p>
-<form method="post" action="index.php">
+<form method="post" action="centermarkedmyself.php">
 	②　：<input type='radio' name ='OKorNO' value='OK'>OK
 	<input type='radio' name ='OKorNO' value='NO' checked>NO
 	<input type="submit" name = "b" value="採点">
 <hr>
 <?php
+$katakana = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","シ","ス","セ","ソ","タ","チ","ツ","テ","ト","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ"];//数学用
 error_reporting(0);
 if(isset($_POST["a"])){
 
@@ -53,7 +61,7 @@ if(isset($_POST["a"])){
 		$_SESSION['bigQuestion'] = 6;
 		$_SESSION['answer'] = array(1,1,4,5,3,3,4,1,1,3,2,1,2,4,2,2,2,1,1,5,3,2,4,3,3,4,4,2,4,2,1,3,2,4,1,1);
 		$_SESSION['points'] = array(2,3,2,3,3,3,3,2,3,3,2,3,3,3,2,2,3,3,2,3,3,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3);
-	}else if($_POST["subjects"]=='政治・経済'){
+	}else if($_POST["subjects"]=='政治・経済・倫理'){
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(5,7,7,8,5,5);
 		$_SESSION['allQuestion'] = 37;
@@ -88,6 +96,48 @@ if(isset($_POST["a"])){
 		$_SESSION['bigQuestion'] = 4;
 		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
 		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+	}else if($_POST["subjects"]=='化学基礎'){
+		$_SESSION['subject'] = $_POST["subjects"];
+		$_SESSION['questionNum'] = array(6,7,6,6);
+		$_SESSION['allQuestion'] = 25;
+		$_SESSION['bigQuestion'] = 4;
+		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
+		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+	}else if($_POST["subjects"]=='生物基礎'){
+		$_SESSION['subject'] = $_POST["subjects"];
+		$_SESSION['questionNum'] = array(6,7,6,6);
+		$_SESSION['allQuestion'] = 25;
+		$_SESSION['bigQuestion'] = 4;
+		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
+		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+	}else if($_POST["subjects"]=='物理'){
+		$_SESSION['subject'] = $_POST["subjects"];
+		$_SESSION['questionNum'] = array(6,7,6,6);
+		$_SESSION['allQuestion'] = 25;
+		$_SESSION['bigQuestion'] = 4;
+		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
+		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+	}else if($_POST["subjects"]=='化学'){
+		$_SESSION['subject'] = $_POST["subjects"];
+		$_SESSION['questionNum'] = array(6,7,6,6);
+		$_SESSION['allQuestion'] = 25;
+		$_SESSION['bigQuestion'] = 4;
+		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
+		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+	}else if($_POST["subjects"]=='数学1・数学A'){
+		$_SESSION['subject'] = $_POST["subjects"];
+		$_SESSION['questionNum'] = array(6,7,6,6);
+		$_SESSION['allQuestion'] = 25;
+		$_SESSION['bigQuestion'] = 4;
+		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
+		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+	}else if($_POST["subjects"]=='数学2・数学B'){
+		$_SESSION['subject'] = $_POST["subjects"];
+		$_SESSION['questionNum'] = array(30,28,29,30);
+		$_SESSION['allQuestion'] = 25;
+		$_SESSION['bigQuestion'] = 4;
+		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
+		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
 	}
 	$tmp = 1;
 	$html = "<table>";
@@ -100,10 +150,30 @@ if(isset($_POST["a"])){
 	for($i = 1 ; $i <= $_SESSION['bigQuestion'] ; $i++){
 		$html .= "<th rowspan= '{$_SESSION['questionNum'][$i-1]}'>[{$i}]</th>";
 		for($j=1;$j<=$_SESSION['questionNum'][$i-1];$j++){
-			$html .= "<th>{$tmp}</th>";
+			if($_POST["subjects"]=="数学1・数学A"||$_POST["subjects"]=="数学2・数学B"){
+				$html .= "<th>{$katakana[$j-1]}</th>";
+			}else{
+				$html .= "<th>{$tmp}</th>";
+			}
 			$html .= "<td>";
-			for($k = 1; $k <= 9; $k++){
-				$html .= "<input type='radio' name ='{$tmp}' value='{$k}'>{$k}";
+			if($_POST["subjects"]=="数学1・数学A"){
+				for($k = 0; $k <= 9; $k++){
+					$html .= "<input type='radio' name ='{$tmp}' value='{$k}'>{$k}";
+				}
+			}else if($_POST["subjects"]=="数学2・数学B"){
+				$html .= "<input type='radio' name ='{$tmp}' value='-'>-";
+				$html .= "<input type='radio' name ='{$tmp}' value='±'>±";
+				for($k = 0; $k <= 9; $k++){
+					$html .= "<input type='radio' name ='{$tmp}' value='{$k}'>{$k}";
+				}
+				$html .= "<input type='radio' name ='{$tmp}' value='a'>a";
+				$html .= "<input type='radio' name ='{$tmp}' value='b'>b";
+				$html .= "<input type='radio' name ='{$tmp}' value='c'>c";
+				$html .= "<input type='radio' name ='{$tmp}' value='d'>d";
+			}else{
+				for($k = 1; $k <= 9; $k++){
+					$html .= "<input type='radio' name ='{$tmp}' value='{$k}'>{$k}";
+				}
 			}
 			$html .= "<input type='radio' name ='{$tmp}' value='None' checked>未選択";
 			$tmp++;
@@ -174,7 +244,11 @@ if(isset($_POST["OKorNO"])){
 		for($i = 1 ; $i <= $_SESSION['bigQuestion'] ; $i++){
 			$html .= "<th rowspan= '{$_SESSION['questionNum'][$i-1]}'>[{$i}]</th>";
 			for($j=1;$j<=$_SESSION['questionNum'][$i-1];$j++){
-				$html .= "<th>{$tmp}</th>";
+				if($subjects=="数学1・数学A"||$subjects=="数学2・数学B"){
+					$html .= "<th>{$katakana[$j-1]}</th>";
+				}else{
+					$html .= "<th>{$tmp}</th>";
+				};
 				$html .= "<td><center>{$_POST[$tmp]}</center></td>";
 				$html .= "<th>{$answer[$tmp-1]}</th>";
 				if($_POST[$tmp]==$answer[$tmp-1]){
