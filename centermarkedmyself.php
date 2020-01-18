@@ -11,7 +11,7 @@
   </div>
   <br>
   <p>センター試験1日目、お疲れ様です。自己採点するサイトを作ったので利用してください。</p>
-　<p>今回、解答は<a hlef="">こちら(現在未定、信憑性の高いサイトが更新されたら掲載します)</a>のサイトを参考にしています。この場を借りてお礼申し上げます。</p>
+　<p>今回、解答は<a hlef="https://www.toshin.com/center/index.html">こちら</a>のサイトを参考にしています。この場を借りてお礼申し上げます。</p>
   <p>以下の順番で選択してください</p>
 　<p>① : 科目を選択した後、表示される表に、各設問ごと自分が回答した番号を選択して下さい(初期は「未選択」にチェックが入っています)</p>
   <p>② : 全てチェックしたのを確認した上で、採点ボタンを押すと採点されます。</p>
@@ -49,35 +49,35 @@ if(isset($_POST["a"])){
 		$_SESSION['questionNum'] = array(6,6,6,6,4,8);
 		$_SESSION['allQuestion'] = 36;
 		$_SESSION['bigQuestion'] = 6;
-		$_SESSION['answer'] = array();
-		$_SESSION['points'] = array();
+		$_SESSION['answer'] = array(1,1,4,5,3,3,4,1,1,3,2,1,2,4,2,2,2,1,1,5,3,2,4,3,3,4,4,2,4,2,1,3,2,4,1,1);
+		$_SESSION['points'] = array(2,3,2,3,3,3,3,2,3,3,2,3,3,3,2,2,3,3,2,3,3,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3);
 	}else if($_POST["subjects"]=='政治・経済'){
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(5,7,7,8,5,5);
 		$_SESSION['allQuestion'] = 37;
 		$_SESSION['bigQuestion'] = 6;
-		$_SESSION['answer'] = array();
-		$_SESSION['points'] = array();
+		$_SESSION['answer'] = array(4,4,3,3,4,3,2,4,4,1,4,2,3,1,1,2,2,3,1,2,4,4,2,4,3,3,1,3,1,6,2,3,2,4,1,4,3);
+		$_SESSION['points'] = array(3,3,3,2,3,2,3,3,2,2,3,3,2,3,3,3,2,2,3,2,2,3,3,3,3,3,3,2,3,3,3,3,3,3,3,3,2);
 	}else if($_POST["subjects"]=='国語'){
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(11,9,8,7);
 		$_SESSION['allQuestion'] = 36;
 		$_SESSION['bigQuestion'] = 4;
-		$_SESSION['answer'] = array();
-		$_SESSION['points'] = array(2,2,2,2,2,8,8,8,8,4,4,3,3,7,8,8,8,5,5,5,5,5,5,7,7,8,8,4,4,7,7,6,7,7,8);//漢文部分配点変更
+		$_SESSION['answer'] = array(5,1,1,4,5,2,3,2,2,1,4,1,1,4,4,2,5,2,3,6,3,2,4,1,3,5,2,5,5,3,2,2,1,5,4);
+		$_SESSION['points'] = array(2,2,2,2,2,8,8,8,8,4,4,3,3,3,7,8,8,8,5,5,5,5,5,6,7,7,7,8,4,4,8,8,8,9,9);//漢文部分配点変更
 	}else if($_POST["subjects"]=='英語'){
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(7,19,6,8,5,9);
 		$_SESSION['allQuestion'] = 54;
 		$_SESSION['bigQuestion'] = 6;
-		$_SESSION['answer'] = array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+		$_SESSION['answer'] = array(2,3,4,2,1,1,2,3,1,3,3,1,1,1,4,2,1,4,2,4,3,5,2,3,1,3,2,2,2,3,3,4,4,4,2,4,1,1,2,4,1,4,4,2,2,1,3,2,4,2,2,4,3,1);
 		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,4,4,5,5,5,5,5,5,6,6,6,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6);
 	}else if($_POST["subjects"]=='リスニング'){
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(6,7,6,6);
 		$_SESSION['allQuestion'] = 25;
 		$_SESSION['bigQuestion'] = 4;
-		$_SESSION['answer'] = array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
 		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
 	}
 	$tmp = 1;
