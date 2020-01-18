@@ -16,10 +16,10 @@
 　<p>① : 科目を選択した後、表示される表に、各設問ごと自分が回答した番号を選択して下さい(初期は「未選択」にチェックが入っています)</p>
   <p>② : 全てチェックしたのを確認した上で、採点ボタンを押すと採点されます。</p>
   <!-- <h4>解答作成完了しました。(2020/01/19 JST 20:30:00)</h4> -->
-  <p>解答データ未登録です (2020/01/18 JST 23:50:08)</p>
+  <p>解答データ未登録です (2020/01/19 JST 00:07:26)</p>
   <h4>※最初から[解答をすべて入力してください]と出ているのは仕様です</h4>
 <hr>
-<form method="post" action="centermarkedmyself.php">
+<form method="post" action="index.php">
 	①：　<select name="subjects" required>
   		<option value="">科目を選択してください</option>
   		<option value="日本史B">日本史B</option>
@@ -39,7 +39,7 @@
 </form>
 <hr>
 <p>本当にすべて解答を入力しましたか？大丈夫でしたらOKをクリックして採点ボタンを押してください。下に採点結果が表示されます。(入力情報はセキュリティ上破棄されます。)</p>
-<form method="post" action="centermarkedmyself.php">
+<form method="post" action="index.php">
 	②　：<input type='radio' name ='OKorNO' value='OK'>OK
 	<input type='radio' name ='OKorNO' value='NO' checked>NO
 	<input type="submit" name = "b" value="採点">
