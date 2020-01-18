@@ -18,7 +18,7 @@
   <p>解答吸出し完了しました。(2020/01/18 JST 22:49:20)</p>	
   <h4>※最初から[解答をすべて入力してください]と出ているのは仕様です</h4>
 <hr>
-<form method="post" action="centermarkedmyself.php">
+<form method="post" action="index.php">
 	①：　<select name="subjects" required>
   		<option value="">科目を選択してください</option>
   		<option value="日本史B">日本史B</option>
@@ -32,7 +32,7 @@
 </form>
 <hr>
 <p>本当にすべて解答を入力しましたか？大丈夫でしたらOKをクリックして採点ボタンを押してください。下に採点結果が表示されます。(入力情報はセキュリティ上破棄されます。)</p>
-<form method="post" action="centermarkedmyself.php">
+<form method="post" action="index.php">
 	②　：<input type='radio' name ='OKorNO' value='OK'>OK
 	<input type='radio' name ='OKorNO' value='NO' checked>NO
 	<input type="submit" name = "b" value="採点">
