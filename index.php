@@ -30,7 +30,7 @@
   		<option value="リスニング">リスニング</option>
   		<option value="化学基礎">化学基礎</option>
   		<option value="生物基礎">生物基礎(未)</option>
-  		<option value="物理">物理(未)</option>
+  		<option value="物理">物理</option>
   		<option value="化学">化学(未)</option>
   		<option value="数学1・数学A">数学1・数学A(未)</option>
   		<option value="数学2・数学B">数学2・数学B(未)</option>
@@ -111,11 +111,11 @@ if(isset($_POST["a"])){
 		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
 	}else if($_POST["subjects"]=='物理'){
 		$_SESSION['subject'] = $_POST["subjects"];
-		$_SESSION['questionNum'] = array(6,7,6,6);
-		$_SESSION['allQuestion'] = 25;
+		$_SESSION['questionNum'] = array(5,4,4,4,3,3);
+		$_SESSION['allQuestion'] = 23;
 		$_SESSION['bigQuestion'] = 6;
-		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
-		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+		$_SESSION['answer'] = array(3,1,4,3,4,4,2,5,3,3,2,6,7,1,3,4,4,1,2,3,8,5,6);
+		$_SESSION['points'] = array(5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5);
 	}else if($_POST["subjects"]=='化学'){
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(6,7,6,6);
