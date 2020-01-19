@@ -33,7 +33,7 @@
   		<option value="物理">物理</option>
   		<option value="化学">化学</option>
   		<option value="数学1・数学A">数学1・数学A</option>
-  		<option value="数学2・数学B">数学2・数学B(未)</option>
+  		<option value="数学2・数学B">数学2・数学B</option>
 	</select>
 	<input type="submit" name = "a" value="科目選択">
 </form>
