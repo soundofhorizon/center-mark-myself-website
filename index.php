@@ -31,7 +31,7 @@
   		<option value="化学基礎">化学基礎</option>
   		<option value="生物基礎">生物基礎(未)</option>
   		<option value="物理">物理</option>
-  		<option value="化学">化学(未)</option>
+  		<option value="化学">化学</option>
   		<option value="数学1・数学A">数学1・数学A(未)</option>
   		<option value="数学2・数学B">数学2・数学B(未)</option>
 	</select>
@@ -107,8 +107,8 @@ if(isset($_POST["a"])){
 		$_SESSION['questionNum'] = array(10,5,8);
 		$_SESSION['allQuestion'] = 23;
 		$_SESSION['bigQuestion'] = 3;
-		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
-		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+		$_SESSION['answer'] = array(5,2,1,6,3,2,1,6,2,6,5,7,6,8,4,1,2,6,1,2,6,7,3);
+		$_SESSION['points'] = array(3,3,3,1,2,3,3,3,3,3,4,3,3,3,3,2,2,3);
 	}else if($_POST["subjects"]=='物理'){
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(5,4,4,4,3,3);
@@ -118,11 +118,11 @@ if(isset($_POST["a"])){
 		$_SESSION['points'] = array(5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5);
 	}else if($_POST["subjects"]=='化学'){
 		$_SESSION['subject'] = $_POST["subjects"];
-		$_SESSION['questionNum'] = array(6,7,6,6);
-		$_SESSION['allQuestion'] = 25;
+		$_SESSION['questionNum'] = array(6,7,8,6,3,2,2);
+		$_SESSION['allQuestion'] = 34;
 		$_SESSION['bigQuestion'] = 7;
-		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
-		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+		$_SESSION['answer'] = array(4,5,2,2,5,4,3,7,5,3,1,4,3,1,3,2,1,2,4,1,4,4,2,5,3,3,1,1,5,6,4,2,2,3);
+		$_SESSION['points'] = array(4,4,4,4,4,4,3,3,4,4,3,3,4,4,4,3,3,4,5,3,4,4,4,2,2,2,2,2,2,2,2,2);
 	}else if($_POST["subjects"]=='数学1・数学A'){//2019で組んでるので全体的に直す必要あり
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(30,14,14,16,13);
@@ -225,6 +225,49 @@ if(isset($_POST["OKorNO"])){
 				}else if($l==51){
 					if($_POST[51]==$answer[50]&&$_POST[52]==$answer[51]&&$_POST[53]==$answer[52]&&$_POST[54]==$answer[53]){
 						$myPoint += $points[47];
+					}
+				}
+			}else if($subjects == "生物基礎"){
+				if($l<=4){
+					if($_POST[$l]==$answer[$l-1]){
+						$myPoint += $points[$l-1];
+					}
+				}else if($l==5){
+					if($_POST[5]==$answer[4]&&$_POST[6]==$answer[5]&&$_POST[7]==$answer[6]){
+						$myPoint += $points[4];
+					}
+					$l = $l + 1;
+				}else if(10<=$l&&$l<=15){
+					if($_POST[$l]==$answer[$l-1]){
+						$myPoint += $points[$l-5];
+					}
+				}else if($l==16){
+					if($_POST[16]==$answer[15]&&$_POST[17]==$answer[16]&&$_POST[18]==$answer[17]){
+						$myPoint += $points[11];
+					}
+					$l = $l + 1 ;
+				}else if(24<=$l&&$l<=50){
+					if($_POST[$l]==$answer[$l-1]){
+						$myPoint += $points[$l-4];
+					}
+				}else if($l==51){
+					if($_POST[51]==$answer[50]&&$_POST[52]==$answer[51]&&$_POST[53]==$answer[52]&&$_POST[54]==$answer[53]){
+						$myPoint += $points[47];
+					}
+				}
+			}else if($subjects == "化学"){
+				if($l<=15){
+					if($_POST[$l]==$answer[$l-1]){
+						$myPoint += $points[$l-1];
+					}
+				}else if($l==16){
+					if($_POST[16]==$answer[15]&&$_POST[17]==$answer[16]&&$_POST[18]==$answer[17]){
+						$myPoint += $points[15];
+					}
+					$l = $l + 2;
+				}else if($l>=19){
+					if($_POST[$l]==$answer[$l-1]){
+						$myPoint += $points[$l-3];
 					}
 				}
 			}else{
@@ -401,6 +444,16 @@ if(isset($_POST["OKorNO"])){
 						$html .= "<td rowspan='{$ansArray[$arrayTarget]}'><center>{$points[$arrayTarget]}</center></td>";
 						$mathTmp2 = $mathTmp2 + $ansArray[$arrayTarget];
 						$arrayTarget += 1;
+					}
+				}else if($subjects=="化学"){
+					if($tmp==16){
+						$html .= "<td rowspan='3'><center>{$points[15]}</center></td>";
+					}else if($tmp==17||$tmp==18){
+
+					}else($tmp>=19){
+						$html .= "<td><center>{$points[$tmp-3]}</center></td>";
+					}else{
+						$html .= "<td><center>{$points[$tmp-1]}</center></td>";
 					}
 				}else{
 					$html .= "<td><center>{$points[$tmp-1]}</center></td>";
