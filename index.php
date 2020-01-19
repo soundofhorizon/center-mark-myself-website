@@ -28,7 +28,7 @@
 		<option value="国語">国語</option>
   		<option value="英語">英語</option>
   		<option value="リスニング">リスニング</option>
-  		<option value="化学基礎">化学基礎(未)</option>
+  		<option value="化学基礎">化学基礎</option>
   		<option value="生物基礎">生物基礎(未)</option>
   		<option value="物理">物理(未)</option>
   		<option value="化学">化学(未)</option>
@@ -100,8 +100,8 @@ if(isset($_POST["a"])){
 		$_SESSION['questionNum'] = array(8,7);
 		$_SESSION['allQuestion'] = 15;
 		$_SESSION['bigQuestion'] = 2;
-		$_SESSION['answer'] = array(1,3,2,4,3,3,3,2,3,3,3,1,2,3,2,2,4,2,1,3,1,3,4,2,1);
-		$_SESSION['points'] = array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+		$_SESSION['answer'] = array(4,3,2,5,2,5,4,1,5,1,8,4,3,2,1);
+		$_SESSION['points'] = array(3,3,2,2,4,4,4,3,4,4,3,3,4,3,4);
 	}else if($_POST["subjects"]=='生物基礎'){//配点、解答を操作
 		$_SESSION['subject'] = $_POST["subjects"];
 		$_SESSION['questionNum'] = array(10,5,8);
