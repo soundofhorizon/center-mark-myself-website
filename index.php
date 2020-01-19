@@ -445,16 +445,6 @@ if(isset($_POST["OKorNO"])){
 						$mathTmp2 = $mathTmp2 + $ansArray[$arrayTarget];
 						$arrayTarget += 1;
 					}
-				}else if($subjects=="化学"){
-					if($tmp==16){
-						$html .= "<td rowspan='3'><center>{$points[15]}</center></td>";
-					}else if($tmp==17||$tmp==18){
-
-					}else($tmp>=19){
-						$html .= "<td><center>{$points[$tmp-3]}</center></td>";
-					}else{
-						$html .= "<td><center>{$points[$tmp-1]}</center></td>";
-					}
 				}else{
 					$html .= "<td><center>{$points[$tmp-1]}</center></td>";
 				}
